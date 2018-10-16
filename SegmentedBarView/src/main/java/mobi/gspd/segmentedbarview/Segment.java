@@ -14,6 +14,12 @@ public class Segment {
         this.color = color;
     }
 
+    public Segment(float maxValue, String descriptionText, int color) {
+        this.maxValue = maxValue;
+        this.descriptionText = descriptionText;
+        this.color = color;
+    }
+
     public Segment(String customText, String descriptionText, int color) {
         this.customText = customText;
         this.descriptionText = descriptionText;
