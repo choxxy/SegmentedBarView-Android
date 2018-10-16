@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initUi() {
 
-        final SegmentedBarView barView = (SegmentedBarView) findViewById(R.id.bar_view);
+        /*final SegmentedBarView barView = (SegmentedBarView) findViewById(R.id.bar_view);
         final ArrayList<Segment> segments = new ArrayList<>();
         segments.add(new Segment(20, 40, "Normal", Color.BLUE));
         segments.add(new Segment(40, 60, "Worse", Color.LTGRAY));
@@ -40,10 +40,10 @@ public class MainActivity extends AppCompatActivity {
                 barView.setValue(50f);
                 barView.setShowDescriptionText(false);
             }
-        });
+        });*/
 
         createNormalBarView();
-        createBarViewWithoutNumericValue();
+        /*createBarViewWithoutNumericValue();
         createNormalBarViewSideStyleNormal();
         createNormalBarViewSideStyleAngle();
         createBarViewInMinPosition();
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         createBarViewWithValueOutOfSegments();
         createNormalBarViewWithTwoSidedSideText();
         createNormalBarViewSideStyleNormal();
-        createNormalBarViewSideStyleAngle();
+        createNormalBarViewSideStyleAngle();*/
     }
 
     private void createBarViewWithoutNumericValue() {
@@ -99,16 +99,17 @@ public class MainActivity extends AppCompatActivity {
     private void createNormalBarView() {
         SegmentedBarView barView = new SegmentedBarView(this);
         ArrayList<Segment> segments = new ArrayList<>();
-        Segment segment = new Segment(0, 4.5f, "Low", Color.parseColor("#EF3D2F"));
+        Segment segment = new Segment(0, 0.40f, "Low", Color.parseColor("#EF3D2F"));
         segments.add(segment);
-        Segment segment2 = new Segment(4.5f, 6.5f, "Optimal", Color.parseColor("#8CC63E"));
+        Segment segment2 = new Segment(0, 0.15f, "Optimal", Color.parseColor("#8CC63E"));
         segments.add(segment2);
-        Segment segment3 = new Segment(6.5f, 20f, "High", Color.parseColor("#EF3D2F"));
+        Segment segment3 = new Segment(0f, 0.45f, "High", Color.parseColor("#EF3D2F"));
         segments.add(segment3);
         barView.setValueWithUnit(4.96f, "10<sup>12</sup>/l");
         barView.setSegments(segments);
         barView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.WRAP_CONTENT));
         barView.setPadding(0, getResources().getDimensionPixelSize(R.dimen.vertical_padding), 0, 0);
+        barView.setShowDescriptionText(true);
         mainLayout.addView(barView);
     }
 
